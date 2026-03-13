@@ -2,15 +2,9 @@
 #include "cbc.hpp"
 using namespace std;
 
-std::string readFile(const std::string& filePath) {
-	std::ifstream file(filePath, std::ios::in | std::ios::binary);
-
-	if (!file.is_open()) {
-		throw std::runtime_error("Could not open file: " + filePath);
-	}
-
-	return std::string((std::istreambuf_iterator<char>(file)),
-						std::istreambuf_iterator<char>());
+string readFile(const string& filePath) {
+	ifstream file(filePath, ios::in | ios::binary);
+	return string((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
 }
 
 unsigned short getDigits(int n, string &pi){
@@ -29,7 +23,5 @@ int main(){
 	vector<unsigned char> c((unsigned char*)s.data(), (unsigned char*)(s.data()+s.size()));
 	char key[32], iv[16];
 	cin.getline(key, sizeof(key)), cin.getline(iv, sizeof(iv));
-	// getline(cin, key), getline(cin, iv);
-
 	cout<<decrypt(c, (unsigned char*)key, (unsigned char*)iv)<<endl;
 }

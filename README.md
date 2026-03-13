@@ -4,7 +4,7 @@
 
 ```$ git clone https://github.com/brianhsu7476/20260314```
 
-If meet the error like:
+If you meet the error like:
 
 ```fatal error: openssl/evp.h: No such file or directory```
 
